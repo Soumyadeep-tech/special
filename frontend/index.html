@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aishwarya 💐</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fff0f5);
+            font-family: 'Poppins', sans-serif;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff69b4" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') 12 12, auto;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .floating-flowers span {
+            position: absolute;
+            animation: float 6s infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .floating-hearts span {
+            position: absolute;
+            animation: float 8s infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        
+        .floating-bubbles span {
+            position: absolute;
+            animation: float 10s infinite;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff69b4;
+            box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            animation: sparkle 2s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        
+        .image-container {
+            width: 200px;
+            height: 200px;
+            border: 3px dashed #ffb6c1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            background-color: rgba(255, 182, 193, 0.1);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 105, 180, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.3); }
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .message-box {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .message-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .special-text {
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #db7093);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        
+        .heart-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .heart-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+        
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #ff69b4;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(15, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff69b4; }
+        }
+        
+        /* Interactive elements */
+        .interactive-element {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .interactive-element:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Chat quotes styles */
+        .chat-quote {
+            position: relative;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ff69b4;
+        }
+        
+        .chat-quote:before {
+            content: "\\201C";
+            font-size: 60px;
+            color: #ff69b4;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            font-family: Georgia, serif;
+        }
+        
+        .chat-quote:after {
+            content: "\\201D";
+            font-size: 60px;
+            color: #ff69b4;
+            position: absolute;
+            right: 10px;
+            bottom: -40px;
+            font-family: Georgia, serif;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-style: italic;
+            margin-top: 20px;
+            color: #ff69b4;
+            font-weight: 600;
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 430px) {
+            .image-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .message-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .image-container {
+                width: 160px;
+                height: 160px;
+            }
+            
+            header h1 {
+                font-size: 2.25rem;
+            }
+        }
+        
+        /* Music player styles */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 182, 193, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .music-player:hover {
+            transform: scale(1.1);
+            background: rgba(255, 105, 180, 0.9);
+        }
+        
+        .love-letter {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .love-letter.expanded {
+            max-height: 1000px;
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-pink-900 relative overflow-x-hidden">
+    <!-- Decorative Elements -->
+    <div class="floating-flowers">
+        <span style="top:10%; left:5%; font-size:30px;">🌸</span>
+        <span style="top:50%; left:80%; font-size:24px;">🌸</span>
+        <span style="top:70%; left:20%; font-size:28px;">🌸</span>
+        <span style="top:30%; left:60%; font-size:26px;">🌸</span>
+        <span style="top:20%; left:90%; font-size:22px;">🌸</span>
+        <span style="top:80%; left:10%; font-size:25px;">🌸</span>
+    </div>
+    
+    <div class="floating-hearts">
+        <span style="top:15%; left:15%; font-size:20px;">💖</span>
+        <span style="top:60%; left:70%; font-size:18px;">💗</span>
+        <span style="top:40%; left:85%; font-size:22px;">💘</span>
+        <span style="top:75%; left:25%; font-size:20px;">💞</span>
+    </div>
+    
+    <div class="floating-bubbles">
+        <span style="top:25%; left:10%; font-size:15px;">💭</span>
+        <span style="top:65%; left:90%; font-size:18px;">💭</span>
+        <span style="top:35%; left:40%; font-size:16px;">💭</span>
+    </div>
+    
+    <div id="sparkles"></div>
+    <div id="confetti-container"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player bounce" onclick="toggleMusic()">
+        <i class="fas fa-music text-pink-700 text-xl"></i>
+    </div>
+    
+    <!-- Header with Image -->
+    <header class="text-center py-6">
+        <div class="image-container mb-5 interactive-element">
+            <img src="aish.jpg" alt="Aishwarya" class="profile-image">
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-pink-700 special-text typewriter">Aishwarya 💖</h1>
+        <p class="mt-3 text-base md:text-lg">A small special website for you!!🌸 </p>
+    </header>
+
+    <section class="text-center section-padding mt-6">
+        <div class="bg-white bg-opacity-80 p-5 md:p-6 rounded-3xl shadow-lg max-w-xl mx-auto message-box message-card interactive-element">
+            <p class="text-lg md:text-xl">Hey Aishh,</p>
+            <p class="mt-3">🌸 Really happy got to meet you atlast🌸</p>
+            <p class="mt-3">This little website is something cute I made for you so lets start</p>
+        </div>
+    </section>
+
+    <!-- Chat Quotes Section -->
+    <section class="text-center mt-8 section-padding">
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-700 mb-5">Aish Quotes 💬</h2>
+        <div class="max-w-xl mx-auto">
+            <div class="chat-quote interactive-element">
+                <p class="text-lg italic">"Ki kodchish"</p>
+                <p class="quote-author mt-4">- Aishwarya</p>
+            </div>
+            
+            <div class="chat-quote interactive-element mt-8">
+                <p class="text-lg italic">"Salt lake gachilam"</p>
+                <p class="quote-author mt-4">- Aishwarya</p>
+            </div>
+            
+            <div class="chat-quote interactive-element mt-8">
+                <p class="text-lg italic">"ajke asteh parbo na re sorry"</p>
+                <p class="quote-author mt-4">- Aishwarya</p>
+            </div>
+        </div>
+        <div class="mt-6 text-pink-700">
+            <p class="font-medium">so some crazy and funny things jeta tui bolish hehe</p>
+        </div>
+    </section>
+
+    <section class="text-center mt-8 section-padding">
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-700">A Little Something for You 💞</h2>
+        <p class="mt-2 text-base md:text-lg">Tap the hearts below to reveal cute messages 💗</p>
+        <div class="flex justify-center space-x-5 md:space-x-6 mt-5 text-3xl md:text-4xl">
+            <span onclick="reveal(1)" class="cursor-pointer heart-btn interactive-element">💖</span>
+            <span onclick="reveal(2)" class="cursor-pointer heart-btn interactive-element">💘</span>
+            <span onclick="reveal(3)" class="cursor-pointer heart-btn interactive-element">💕</span>
+        </div>
+        <p id="msg1" class="hidden mt-4 text-lg md:text-xl font-semibold bg-pink-50 p-4 rounded-xl">Open korchish kano ata?</p>
+        <p id="msg2" class="hidden mt-4 text-lg md:text-xl font-semibold bg-pink-50 p-4 rounded-xl">You are cooked  ✨</p>
+        <p id="msg3" class="hidden mt-4 text-lg md:text-xl font-semibold bg-pink-50 p-4 rounded-xl">You are really sweet so some flowers for you!!🌸💐</p>
+    </section>
+
+    
+    <footer class="text-center py-6 mt-10">
+        <p class="text-base md:text-lg">Made with 💖 just for you, hehe also</p>
+        <p class="text-base md:text-lg">UP FOR THE SECOND DATE ?!!</p>
+        <p class="text-base md:text-lg">tui toh ask korbina :( ""so honestly bolbi if you really like me and you are ready for the next date or not>?</p>
+        <p class="mt-3 text-2xl text-pink-700">Made with facts (erokom website first time create korlam out of projects ideas hehe)</p>
+    </footer>
+
+    <audio id="background-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Create sparkles
+        function createSparkles() {
+            const container = document.getElementById('sparkles');
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(sparkle);
+            }
+        }
+        
+        // Heart reveal function with confetti
+        function reveal(id) {
+            const msg = document.getElementById('msg' + id);
+            msg.classList.toggle('hidden');
+            
+            // Add animation effect
+            if (!msg.classList.contains('hidden')) {
+                msg.style.animation = 'none';
+                setTimeout(() => {
+                    msg.style.animation = 'float 1s ease';
+                }, 10);
+                
+                // Create confetti effect
+                createConfetti();
+            }
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ff69b4', '#ff1493', '#db7093', '#ffb6c1', '#ffc0cb'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                container.appendChild(confetti);
+                
+                // Animate confetti
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+                
+                // Remove confetti after animation
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Toggle music
+        function toggleMusic() {
+            const audio = document.getElementById('background-music');
+            const icon = document.querySelector('.music-player i');
+            
+            if (audio.paused) {
+                audio.play();
+                icon.classList.remove('fa-music');
+                icon.classList.add('fa-volume-up');
+            } else {
+                audio.pause();
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-music');
+            }
+        }
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Add falling hearts on click
+        document.body.addEventListener('click', function(e) {
+            if (e.target.closest('.music-player')) return;
+            
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '20px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '9999';
+            document.body.appendChild(heart);
+            
+            // Animate falling heart
+            const animation = heart.animate([
+                { transform: 'translateY(0) scale(1)', opacity: 1 },
+                { transform: 'translateY(-100px) scale(1.5)', opacity: 0.8 },
+                { transform: 'translateY(-200px) scale(1)', opacity: 0 }
+            ], {
+                duration: 1500,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => heart.remove();
+        });
+        
+        // Add interactive effects to elements
+        document.querySelectorAll('.interactive-element').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.3)';
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createSparkles();
+        });
+    </script>
+</body>
+</html>
